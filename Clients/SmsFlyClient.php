@@ -73,8 +73,10 @@ EOT;
 
         $recipients = implode(PHP_EOL, $recipients);
 
+        $alfaname = $message->from ?: $this->alfaname;
+
         $data = <<<EOT
-<message start_time="AUTO" end_time="AUTO" livetime="4" rate="1" desc="{$description}" source="{$this->alfaname}">
+<message start_time="AUTO" end_time="AUTO" livetime="4" rate="1" desc="{$description}" source="{$alfaname}">
     <body>{$text}</body>
     {$recipients}
 </message>
